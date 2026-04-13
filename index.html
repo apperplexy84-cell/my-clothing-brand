@@ -3,51 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOUR BRAND | London</title>
+    <title>NEW DROP | STREETWEAR</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+        .product-card:hover img { transform: scale(1.05); transition: all 0.3s ease; }
+    </style>
 </head>
-<body class="bg-white text-black antialiased">
+<body>
 
-    <nav class="flex justify-between items-center p-6 uppercase tracking-widest text-sm border-b border-gray-100">
-        <div class="font-bold text-xl">BRAND NAME</div>
-        <div class="space-x-8 hidden md:flex">
-            <a href="#" class="hover:underline">Shop</a>
-            <a href="#" class="hover:underline">Archive</a>
-            <a href="#" class="hover:underline">London</a>
+    <nav class="p-6 flex justify-between items-center border-b border-zinc-800">
+        <h1 class="text-2xl font-black tracking-tighter uppercase">Your Brand</h1>
+        <div class="space-x-6 text-sm uppercase tracking-widest">
+            <a href="#" class="hover:text-zinc-400">Shop</a>
+            <a href="#" class="hover:text-zinc-400">Cart (0)</a>
         </div>
-        <div>Cart (0)</div>
     </nav>
 
-    <section class="h-[80-vh] flex items-center justify-center bg-gray-50 py-20">
-        <div class="text-center">
-            <h1 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter mb-4">New Drop</h1>
-            <p class="text-gray-500 uppercase tracking-widest text-sm mb-8">Available exclusively in London & Online</p>
-            <a href="#" class="bg-black text-white px-10 py-4 uppercase font-bold hover:bg-gray-800 transition">Shop Now</a>
-        </div>
-    </section>
+    <header class="py-20 px-6 text-center">
+        <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-4">New Season</h2>
+        <p class="text-zinc-400 uppercase tracking-widest text-sm">Limited Drop • Available Worldwide</p>
+    </header>
 
-    <section class="max-w-7xl mx-auto py-20 px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="group cursor-pointer">
-                <div class="bg-gray-100 aspect-[3/4] mb-4 overflow-hidden">
-                    <img src="images/item1.jpg" alt="Hoodie" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <h3 class="font-bold uppercase text-sm">Heavyweight Hoodie</h3>
-                <p class="text-gray-500">£85.00</p>
+    <main class="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <div class="product-card group cursor-pointer">
+            <div class="overflow-hidden bg-zinc-900 aspect-[3/4] mb-4">
+                <img src="images/item1.jpg" alt="Heavyweight Hoodie" class="w-full h-full object-cover opacity-80 group-hover:opacity-100">
             </div>
-            <div class="group cursor-pointer">
-                <div class="bg-gray-100 aspect-[3/4] mb-4 overflow-hidden">
-                    <img src="images/item2.jpg" alt="Tee" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="uppercase font-bold text-lg">Heavyweight Hoodie</h3>
+                    <p class="text-zinc-500 text-sm">Oversized Fit • 450GSM</p>
                 </div>
-                <h3 class="font-bold uppercase text-sm">Boxy Graphic Tee</h3>
-                <p class="text-gray-500">£45.00</p>
+                <p class="font-bold">£65</p>
             </div>
         </div>
-    </section>
 
-    <footer class="p-10 border-t border-gray-100 text-center text-xs text-gray-400 uppercase tracking-widest">
-        &copy; 2026 BRAND NAME. Made in London.
-    </footer>
-
-</body>
-</html>
+        <div class="product-card group cursor-pointer">
+            <div class="overflow-hidden bg-zinc-900 aspect-[3/4] mb-4">
+                <img src="images/item2.jpg" alt="Graphic Tee" class="w-full h-full object-cover opacity-80 group-hover:opacity-100">
+            </div>
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="uppercase font-bold text-
