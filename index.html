@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title> NEOPOPSIA • Wearable Art</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NEOPOPSIA • Wearable Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
         
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+        }
+        .logo-font { 
+            font-family: 'Space Grotesk', sans-serif; 
+        }
         
         .hero-bg {
             background: linear-gradient(135deg, #1a0033 0%, #330022 50%, #002211 100%);
         }
         
-        .light blue-text {
+        .neon-text {
             text-shadow: 0 0 20px rgba(255, 0, 136, 0.6);
         }
         
@@ -29,26 +33,31 @@
             color: black;
             font-weight: 700;
         }
+        
+        /* Mobile improvements */
+        .nav-menu {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-zinc-950 text-white overflow-x-hidden">
 
-    <!-- Top promotional bar (like Primark's urgent banner) -->
-    <div class="bg-black py-3 text-center text-sm tracking-widest border-b border-zinc-800">
-         BOLD AND MAXIMALIST • WEARABLE ART PREMIUM STREETWEAR • FREE UK SHIPPING OVER £150
+    <!-- Top promotional bar -->
+    <div class="bg-black py-3 text-center text-xs sm:text-sm tracking-widest border-b border-zinc-800 px-4">
+        BOLD AND MAXIMALIST • WEARABLE ART PREMIUM STREETWEAR • FREE UK SHIPPING OVER £150
     </div>
 
-    <!-- Main Navigation (copied Primark structure) -->
+    <!-- Navbar -->
     <nav class="sticky top-0 bg-zinc-950 border-b border-zinc-800 z-50">
-        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-5 flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-pink-500 via-lime-400 to-purple-500 flex items-center justify-center text-black text-3xl font-bold logo-font rounded">V</div>
-                <span class="logo-font text-3xl tracking-tighter">Neopopsia</span>
+                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-pink-500 via-lime-400 to-purple-500 flex items-center justify-center text-black text-2xl sm:text-3xl font-bold logo-font rounded">V</div>
+                <span class="logo-font text-2xl sm:text-3xl tracking-tighter">Neopopsia</span>
             </div>
 
-            <!-- Main Menu Categories (Primark style) -->
-            <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium">
+            <!-- Main Menu -->
+            <div class="hidden md:flex gap-6 lg:gap-8 text-sm uppercase tracking-widest font-medium">
                 <a href="#" class="hover:text-lime-400">Women</a>
                 <a href="#" class="hover:text-lime-400">Men</a>
                 <a href="#" class="hover:text-lime-400">Unisex Drops</a>
@@ -56,8 +65,8 @@
                 <a href="#" class="hover:text-lime-400">Sale</a>
             </div>
 
-            <!-- Right side icons -->
-            <div class="flex items-center gap-6 text-xl">
+            <!-- Right icons -->
+            <div class="flex items-center gap-5 sm:gap-6 text-xl">
                 <i class="fa-solid fa-magnifying-glass cursor-pointer hover:text-lime-400"></i>
                 <i class="fa-solid fa-user cursor-pointer hover:text-lime-400"></i>
                 <i onclick="toggleCart()" class="fa-solid fa-bag-shopping cursor-pointer hover:text-lime-400 relative">
@@ -67,48 +76,54 @@
         </div>
     </nav>
 
-    <!-- Hero Banner (large like Primark) -->
-    <div class="hero-bg h-screen flex items-center relative">
-        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none neon-text">
-                    ART YOU CAN WEAR.<br>FROM THE GALLERY TO YOUR WARDROBE.
-                </h1>
-                <p class="text-xl text-zinc-300 max-w-md">
-                    Bold, colourful streetwear printed from original artwork.<br>
-                    Maximal energy. Premium quality. Shoreditch soul.
-                </p>
-                <button onclick="document.getElementById('shop-section').scrollIntoView({behavior: 'smooth'})" 
-                        class="add-btn px-10 py-5 rounded-full text-lg uppercase tracking-widest">
-                    Shop the New Drop
-                </button>
-            </div>
-            <div>
-                <img src="https://picsum.photos/id/1015/800/900" alt="Model wearing vibrant art print hoodie" 
-                     class="rounded-3xl shadow-2xl w-full">
+    <!-- Hero Banner -->
+    <div class="hero-bg min-h-screen flex items-center relative py-12 md:py-0">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+                <div class="space-y-6 text-center md:text-left">
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tighter leading-none neon-text">
+                        ART YOU CAN WEAR.<br>FROM THE GALLERY TO YOUR WARDROBE.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-zinc-300 max-w-md mx-auto md:mx-0">
+                        Bold, colourful streetwear printed from original artwork.<br>
+                        Maximal energy. Premium quality. Shoreditch soul.
+                    </p>
+                    <button onclick="document.getElementById('shop-section').scrollIntoView({behavior: 'smooth'})"
+                            class="add-btn px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg uppercase tracking-widest mx-auto md:mx-0 block">
+                        Shop the New Drop
+                    </button>
+                </div>
+                
+                <div class="mt-8 md:mt-0">
+                    <img src="https://picsum.photos/id/1015/800/900" 
+                         alt="Model wearing vibrant art print hoodie"
+                         class="rounded-3xl shadow-2xl w-full max-h-[600px] object-cover">
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Shop Section - Product Grid (Primark-style layout) -->
-    <section id="shop-section" class="max-w-screen-2xl mx-auto px-8 py-20">
-        <h2 class="text-4xl font-semibold mb-10">New In — Limited Art Drops</h2>
+    <!-- Shop Section -->
+    <section id="shop-section" class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-16 md:py-20">
+        <h2 class="text-3xl sm:text-4xl font-semibold mb-10 text-center md:text-left">New In — Limited Art Drops</h2>
         
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
             
             <!-- Product 1 -->
             <div class="product-card group bg-zinc-900 rounded-3xl overflow-hidden">
                 <div class="relative">
-                    <img src="https://picsum.photos/id/1015/600/600" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" alt="Hoodie">
+                    <img src="https://picsum.photos/id/1015/600/600" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" 
+                         alt="Chaos Bloom Oversized Hoodie">
                     <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 text-xs rounded">Limited</div>
                 </div>
-                <div class="p-6">
-                    <h3 class="font-medium text-lg">Chaos Bloom Oversized Hoodie</h3>
-                    <p class="text-zinc-400 text-sm">Your artwork • 420gsm fleece</p>
+                <div class="p-5 sm:p-6">
+                    <h3 class="font-medium text-base sm:text-lg">Chaos Bloom Oversized Hoodie</h3>
+                    <p class="text-zinc-400 text-sm">420gsm fleece • Original print</p>
                     <div class="mt-4 flex justify-between items-center">
-                        <span class="text-2xl font-semibold">£89</span>
+                        <span class="text-xl sm:text-2xl font-semibold">£89</span>
                         <button onclick="addToCart(this)" 
-                                class="add-btn px-6 py-3 text-sm rounded-2xl">Add to bag</button>
+                                class="add-btn px-5 sm:px-6 py-2.5 sm:py-3 text-sm rounded-2xl">Add to bag</button>
                     </div>
                 </div>
             </div>
@@ -116,60 +131,67 @@
             <!-- Product 2 -->
             <div class="product-card group bg-zinc-900 rounded-3xl overflow-hidden">
                 <div class="relative">
-                    <img src="https://picsum.photos/id/201/600/600" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" alt="Tee">
+                    <img src="https://picsum.photos/id/201/600/600" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" 
+                         alt="Acid Grid Heavyweight Tee">
                 </div>
-                <div class="p-6">
-                    <h3 class="font-medium text-lg">Acid Grid Heavyweight Tee</h3>
+                <div class="p-5 sm:p-6">
+                    <h3 class="font-medium text-base sm:text-lg">Acid Grid Heavyweight Tee</h3>
                     <p class="text-zinc-400 text-sm">280gsm cotton • All-over print</p>
                     <div class="mt-4 flex justify-between items-center">
-                        <span class="text-2xl font-semibold">£45</span>
+                        <span class="text-xl sm:text-2xl font-semibold">£45</span>
                         <button onclick="addToCart(this)" 
-                                class="add-btn px-6 py-3 text-sm rounded-2xl">Add to bag</button>
+                                class="add-btn px-5 sm:px-6 py-2.5 sm:py-3 text-sm rounded-2xl">Add to bag</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Repeat more cards as needed -->
+            <!-- Product 3 -->
             <div class="product-card group bg-zinc-900 rounded-3xl overflow-hidden">
                 <div class="relative">
-                    <img src="https://picsum.photos/id/237/600/600" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" alt="Jacket">
+                    <img src="https://picsum.photos/id/237/600/600" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" 
+                         alt="Shoreditch Bomber Jacket">
                 </div>
-                <div class="p-6">
-                    <h3 class="font-medium text-lg">Shoreditch Bomber Jacket</h3>
+                <div class="p-5 sm:p-6">
+                    <h3 class="font-medium text-base sm:text-lg">Shoreditch Bomber Jacket</h3>
                     <p class="text-zinc-400 text-sm">Water-resistant • Full art lining</p>
                     <div class="mt-4 flex justify-between items-center">
-                        <span class="text-2xl font-semibold">£135</span>
+                        <span class="text-xl sm:text-2xl font-semibold">£135</span>
                         <button onclick="addToCart(this)" 
-                                class="add-btn px-6 py-3 text-sm rounded-2xl">Add to bag</button>
+                                class="add-btn px-5 sm:px-6 py-2.5 sm:py-3 text-sm rounded-2xl">Add to bag</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Product 4 -->
             <div class="product-card group bg-zinc-900 rounded-3xl overflow-hidden">
                 <div class="relative">
-                    <img src="https://picsum.photos/id/870/600/600" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" alt="Pants">
+                    <img src="https://picsum.photos/id/870/600/600" 
+                         class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" 
+                         alt="Dopamine Track Pants">
                 </div>
-                <div class="p-6">
-                    <h3 class="font-medium text-lg">Dopamine Track Pants</h3>
+                <div class="p-5 sm:p-6">
+                    <h3 class="font-medium text-base sm:text-lg">Dopamine Track Pants</h3>
                     <p class="text-zinc-400 text-sm">Matching set energy</p>
                     <div class="mt-4 flex justify-between items-center">
-                        <span class="text-2xl font-semibold">£65</span>
+                        <span class="text-xl sm:text-2xl font-semibold">£65</span>
                         <button onclick="addToCart(this)" 
-                                class="add-btn px-6 py-3 text-sm rounded-2xl">Add to bag</button>
+                                class="add-btn px-5 sm:px-6 py-2.5 sm:py-3 text-sm rounded-2xl">Add to bag</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Simple Cart Sidebar -->
-    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-96 bg-zinc-900 border-l border-lime-400 translate-x-full transition-transform duration-300 flex flex-col z-50">
-        <div class="p-6 border-b border-zinc-700 flex justify-between">
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-80 sm:w-96 bg-zinc-900 border-l border-lime-400 translate-x-full transition-transform duration-300 flex flex-col z-50">
+        <div class="p-6 border-b border-zinc-700 flex justify-between items-center">
             <h2 class="text-2xl font-semibold">Your Bag</h2>
-            <button onclick="toggleCart()" class="text-3xl">×</button>
+            <button onclick="toggleCart()" class="text-3xl leading-none">×</button>
         </div>
         <div id="cart-items" class="flex-1 p-6 overflow-auto">
-            <!-- JS adds items here -->
+            <!-- Items added by JS -->
         </div>
         <div class="p-6 border-t border-zinc-700">
             <div class="flex justify-between text-xl mb-6">
@@ -186,14 +208,14 @@
         function addToCart(btn) {
             const card = btn.closest('.product-card');
             const name = card.querySelector('h3').textContent;
-            const priceText = card.querySelector('.text-2xl').textContent;
+            const priceText = card.querySelector('.text-2xl, .text-xl').textContent;
             const price = parseFloat(priceText.replace('£', ''));
             
             cart.push({name, price});
             updateCart();
             
             btn.textContent = "Added ✓";
-            setTimeout(() => btn.textContent = "Add to bag", 1200);
+            setTimeout(() => btn.textContent = "Add to bag", 1500);
         }
         
         function updateCart() {
@@ -204,13 +226,13 @@
             cart.forEach((item, i) => {
                 total += item.price;
                 const div = document.createElement('div');
-                div.className = "flex justify-between items-center mb-6";
+                div.className = "flex justify-between items-center mb-6 pb-6 border-b border-zinc-800 last:border-0";
                 div.innerHTML = `
-                    <div>
-                        <p class="font-medium">${item.name}</p>
+                    <div class="flex-1">
+                        <p class="font-medium text-sm">${item.name}</p>
                         <p class="text-sm text-zinc-400">£${item.price}</p>
                     </div>
-                    <button onclick="removeItem(${i})" class="text-red-400">Remove</button>
+                    <button onclick="removeItem(${i})" class="text-red-400 hover:text-red-500">Remove</button>
                 `;
                 container.appendChild(div);
             });
